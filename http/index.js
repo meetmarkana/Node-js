@@ -1,11 +1,7 @@
 const http = require("http");
-
 const fsPromise = require("fs/promises");
-
 const server = http.createServer(async (req, res) => {
-
   const path = req.url;
-
   const method = req.method;
 
 
@@ -13,22 +9,14 @@ const server = http.createServer(async (req, res) => {
 
 
   if (path.includes("file") && method == "GET") {
-
-    const filename = path.split("/").pop(); // index.html
-
+    const filename = path.split("/").pop(); 
     console.log(filename);
-
     const data = await fsPromise.readFile("./" + filename);
-
     res.end(data);
-
   }
-
 });
 
 
-server.listen(7800, () => {
-
+server.listen(7805, () => {
   console.log("server running");
-
 });
