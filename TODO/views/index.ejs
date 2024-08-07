@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express-Todo</title>
+
+</head>
+
+<body>
+
+  <h1 style="text-align: center;"> ~ : Add Task : ~</h1>
+  <form action="/insertData" method="post">
+    
+    <input type="number" name="id" placeholder="Enter Task number">&nbsp;&nbsp;<input type="text" name="name" placeholder="Enter Task"> <input type="submit">
+    
+  </form>
+  <table class="table" style="text-align: center;">
+    
+    <thead>
+     
+      
+      <tr>
+        
+      
+        <th scope="col">No.</th>
+        <th scope="col">Task</th>
+       
+        <th>Remove task</th>
+        <th>Edit task</th>
+
+      </tr>
+    </thead>
+    <tbody>
+  <% todo.map((el,i)=>{%>
+    <tr>
+      <th scope="row"><%= el.id %></th>
+      <td><%= el.name %></td>
+      <td><a href="/deleteData?userid=<%=el.id %>">Delete Task</a></td>
+      <td><a href="/editData?editid=<%=el.id %>">Edit Task</a></td>
+    
+   
+    </tr>
+  <%})%>
+      
+  
+     
+     
+    </tbody>
+  </table>
+
+</body>
+</html>

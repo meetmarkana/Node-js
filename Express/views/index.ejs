@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form action="<%= studentToEdit ? '/editData' : '/insertData' %>" method="post">
+      <input type="hidden" name="id" value="<%= studentToEdit ? studentToEdit.id : '' %>" />
+      <input type="text" name="name" value="<%= studentToEdit ? studentToEdit.name : '' %>" />
+      <input type="submit" />
+    </form>
+
+    <table>
+      <tr>
+        <th>id</th>&nbsp;&nbsp;&nbsp;
+        <th>name</th>
+        
+      </tr>
+
+      <% student.map((el, i) => { %>
+      <tr>
+        <td><%= el.id %></td>
+        <td><%= el.name %></td>
+        <td>
+          <a href="/editData?userid=<%= el.id %>">edit</a>
+          <a href="/deleteData?userid=<%= el.id %>">delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
