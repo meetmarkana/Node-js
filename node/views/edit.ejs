@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit page</h1> 
+
+   <form action="/update?id=<%=editData.id%>" method="post">
+        <input type="text" placeholder="Enter Your name" value="<%=editData.name%>" name="name" required>
+        <input type="Course" placeholder="Enter Course" value="<%=editData.course%>" name="course" required>
+        <input type="submit" value="submit">
+   </form>
+</body>
+</html>
