@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        form{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h3>Add Movie</h3>
+    <form action="/insert" enctype="multipart/form-data" method="post">
+        <div class="input form-control w-1">
+            <input type="text" class="form-control" placeholder="Movie Name" name="name"><br>
+            <input type="text" class="form-control" placeholder="Type" name="type"><br>
+            <input type="text" class="form-control" placeholder="Description" name="description"><br>
+            <input type="text" class="form-control" placeholder="Price" name="price"><br>
+            <input type="file" class="form-control" name="image"><br>
+            <input type="submit" value="Add">
+          </div>
+    </form>
+</center>
+</body>
+</html>
