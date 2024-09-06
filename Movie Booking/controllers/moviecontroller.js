@@ -8,7 +8,7 @@ module.exports.home = async (req, res) => {
         if (data) { 
             res.render("home", { data });
         } else {
-            console.log("Data not found");
+            console.log("Movie not found");
         }
     } catch (err) {
         console.error(err);
@@ -28,7 +28,7 @@ module.exports.insert = async (req, res) => {
             res.redirect("/");
             // console.log(data)
         } else {
-            console.log("Data not submitted");
+            console.log("Movie not submitted");
         }
     } catch (err) {
         console.error(err);
@@ -45,7 +45,7 @@ module.exports.deletemovie = async (req, res) => {
             if (deletedata) {
                 res.redirect("back");
             } else {
-                console.log("Data not deleted");
+                console.log("Movie not deleted");
             }
         } else {
             console.log("Movie not found");
@@ -61,7 +61,7 @@ module.exports.editdmovie = async (req, res) => {
         if (editschema) {
             res.render("edit", { editschema });
         } else {
-            console.log("Data not found");
+            console.log("Movie not found");
         }
     } catch (err) {
         console.error(err);
@@ -83,7 +83,7 @@ module.exports.updatemovie = async (req, res) => {
             if (updatedata) {
                 res.redirect("/");
             } else {
-                console.log("Data Not updated");
+                console.log("Movie Not updated");
             }
         } else {
             console.log("Movie not found");
