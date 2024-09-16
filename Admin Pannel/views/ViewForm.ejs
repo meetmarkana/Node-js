@@ -455,7 +455,8 @@
                       <thead >
                         <tr>
                           <th>Images</th>
-                          <th>Full name</th>
+                          <th>FirstName</th>
+                          <th>LasstName</th>
                           <th>Email</th>
                           <th>Message</th>
                           <th>Edit</th>
@@ -467,6 +468,7 @@
                           <tr>
                             <th scope="row"><img src="<%=el.img%>" alt="" width="30%" height="60px"></th>
                             <td><%=el.fname%></td>
+                            <td><%=el.lname%></td>
                             <td><%=el.email%></td>
                             <td><%=el.msg%></td>
                             <td><a href="/editdata?id=<%=el.id%>" style="text-decoration: none; color: green; font-size: 20px;"><i class="ri-edit-box-line"></i>
