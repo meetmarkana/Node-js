@@ -171,6 +171,8 @@ module.exports.deletedata=async(req,res)=>{
     try{
         
         const singledata=await UserModel.findById(req.query.id);
+       const imgpath=path.join(__dirname,'..',singledata.img)
+
         fs.unlinkSync(singledata.img)
         
        const deldata=await UserModel.findByIdAndDelete(req.query.id)
