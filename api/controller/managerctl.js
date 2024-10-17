@@ -2,7 +2,6 @@ const adminschema = require("../model/adminschema");
 const managerschema = require("../model/managerschema");
 const employeschema = require("../model/employeschema")
 const bcrypt = require("bcrypt")
-const moment = require("moment")
 const jwt = require("jsonwebtoken")
 const mailer = require("../config/mailer")
 
@@ -110,10 +109,10 @@ module.exports.viewemploye = async(req,res)=>{
 }
 module.exports.deletemploye = async(req,res)=>{
     try{
-        await managerschema.findByIdAndDelete(req.query.id);
-    res.status(200).json({msg : "manager deleted"})
+        await employeschema.findByIdAndDelete(req.query.id);
+    res.status(200).json({msg : "employe deleted"})
     }catch(err){
-        res.status(404).json({msg : "manager not deleted"})
+        res.status(404).json({msg : "employe not deleted"})
 
     }
 }

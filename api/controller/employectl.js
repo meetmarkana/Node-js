@@ -27,9 +27,9 @@ module.exports.viewemploye = async(req,res)=>{
 module.exports.deletemploye = async(req,res)=>{
     try{
         await employeschema.findByIdAndDelete(req.query.id);
-    res.status(200).json({msg : "manager deleted"})
+    res.status(200).json({msg : "employe deleted"})
     }catch(err){
-        res.status(404).json({msg : "manager not deleted"})
+        res.status(404).json({msg : "employe not deleted"})
 
     }
 }

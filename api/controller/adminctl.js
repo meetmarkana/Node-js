@@ -100,7 +100,6 @@ module.exports.verifyOtp = async (req, res) => {
 };
 
 module.exports.addmanager = async (req, res) => {
-   
     req.body.password = await bcrypt.hash(req.body.password, 10);
     let data = await managerschema.create(req.body)
     data ? res.status(200).json({ msg: 'manager created' }) : res.status(404).json({ msg: 'manager not add' })
@@ -141,7 +140,7 @@ module.exports.addemploye = async (req, res) => {
    
     req.body.password = await bcrypt.hash(req.body.password, 10);
     let data = await employeschema.create(req.body)
-    data ? res.status(200).json({ msg: 'manager created' }) : res.status(404).json({ msg: 'manager not add' })
+    data ? res.status(200).json({ msg: 'employe created' }) : res.status(404).json({ msg: 'employe not add' })
     console.log(req.body)
 
 }
@@ -167,10 +166,10 @@ module.exports.viewemploye = async(req,res)=>{
 }
 module.exports.deletemploye = async(req,res)=>{
     try{
-        await managerschema.findByIdAndDelete(req.query.id);
-    res.status(200).json({msg : "manager deleted"})
+        await employeschema.findByIdAndDelete(req.query.id);
+    res.status(200).json({msg : "employe deleted"})
     }catch(err){
-        res.status(404).json({msg : "manager not deleted"})
+        res.status(404).json({msg : "employe not deleted"})
 
     }
 }
