@@ -12,8 +12,8 @@ const auth = async(req,res,next)=>{
     let newtoken = token.slice(7,token.length);
     let decode = jwt.verify(newtoken,"node");
 
-    let man = await employeschema.findById(decode.employedata._id)
-    if(!man){
+    let employe = await employeschema.findById(decode.userdata._id)
+    if(!employe){
         return res.status(400).json({msg:"invalid employe"})
     }
 
@@ -21,5 +21,4 @@ const auth = async(req,res,next)=>{
     
     next();
 }
-
 module.exports = auth;

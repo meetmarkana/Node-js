@@ -22,10 +22,6 @@ const crud = mongoose.Schema(
             type : Array,
             required : true
         },
-        image : {
-            type : String,
-            required : true
-        },
         creaedAT :{
             type : String,
             required : true

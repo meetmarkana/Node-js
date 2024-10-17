@@ -14,8 +14,6 @@ module.exports.addadmin = async (req, res) => {
     req.body.password = await bcrypt.hash(req.body.password, 10);
     req.body.creaedAT = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-
-    req.body.image = req.file.path
     let data = await adminschema.create(req.body)
     data ? res.status(200).json({ msg: 'data sent scuccessfully' }) : res.status(404).json({ msg: 'error for sendin data' })
     console.log(req.body)
@@ -23,8 +21,6 @@ module.exports.addadmin = async (req, res) => {
 }
 module.exports.logadmin = async (req, res) => {
     let user = await adminschema.findOne({ email: req.body.email });
-    
-
     console.log(user)
     if (user) {
         if (await bcrypt.compare(req.body.password, user.password)) {
@@ -106,22 +102,7 @@ module.exports.addmanager = async (req, res) => {
     console.log(req.body)
 
 }
-module.exports.logmanager =async(req,res)=>{
-    let user = await managerschema.findOne({ email: req.body.email });
-    console.log(user)
-    if (user) {
-        if (await bcrypt.compare(req.body.password, user.password)) {
-            let token = jwt.sign({ userdata: user }, "node", { expiresIn: "1h" })
-            console.log(token)
-            res.status(200).json({ msg: 'login scuccessfully', token: token })
 
-        } else {
-            res.status(404).json({ msg: 'password not match' })
-        }
-    } else {
-        res.status(404).json({ msg: 'user not found' })
-    }
-}
 module.exports.viewmanager = async(req,res)=>{
     let data = await managerschema.find({});
     data ? res.status(200).json({ msg: 'data sent scuccessfully', managerdata: data }) : res.status(404).json({ msg: 'error for sendin data' })   
@@ -144,22 +125,7 @@ module.exports.addemploye = async (req, res) => {
     console.log(req.body)
 
 }
-module.exports.logemploye =async(req,res)=>{
-    let user = await employeschema.findOne({ email: req.body.email });
-    console.log(user)
-    if (user) {
-        if (await bcrypt.compare(req.body.password, user.password)) {
-            let token = jwt.sign({ userdata: user }, "node", { expiresIn: "1h" })
-            console.log(token)
-            res.status(200).json({ msg: 'login scuccessfully', token: token })
 
-        } else {
-            res.status(404).json({ msg: 'password not match' })
-        }
-    } else {
-        res.status(404).json({ msg: 'user not found' })
-    }
-}
 module.exports.viewemploye = async(req,res)=>{
     let data = await employeschema.find({});
     data ? res.status(200).json({ msg: 'data sent scuccessfully', employedata: data }) : res.status(404).json({ msg: 'error for sendin data' })   

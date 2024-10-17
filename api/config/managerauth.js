@@ -12,9 +12,9 @@ const auth = async(req,res,next)=>{
     let newtoken = token.slice(7,token.length);
     let decode = jwt.verify(newtoken,"node");
 
-    let man = await managerschema.findById(decode.userdata._id)
-    let emp = await employeschema.findById(decode.userdata._id)
-    if(!man && !emp){
+    let manager = await managerschema.findById(decode.userdata._id)
+    let employe = await employeschema.findById(decode.userdata._id)
+    if(!manager && !employe){
         return res.status(400).json({msg:"invalid manager or employe"})
     }
 
