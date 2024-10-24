@@ -1,0 +1,177 @@
+.app{
+    height: 100vh;
+    width: 100%;
+}
+.registration-form {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+}
+
+form{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.registration-form h2 {
+  text-align: center;
+}
+
+.registration-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  width: 350px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registration-form button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.view{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.action{
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.posts-section {
+  margin: 20px;
+}
+
+.posts-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.posts-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.posts-section li {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.posts-section li h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.posts-section li p {
+  margin: 0 0 10px;
+}
+
+.posts-section li img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+@media (max-width: 991px) {
+  .main .navbar-side {
+    width: 40px;
+    -webkit-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out;
+    font-size: 0.8em;
+  }
+  .main .navbar-side .link-text {
+    display: none;
+  }
+  .main .navbar-side .caret {
+    display: none;
+  }
+  .main .navbar-side h6 {
+    margin: 9px 0 10px 9px;
+    font-size: 1.2em;
+    line-height: 1.9;
+  }
+  .main .navbar-side ul li a {
+    padding-left: 10px;
+  }
+  .main .navbar-side ul li a:hover,
+  .main .navbar-side ul li a.link-active {
+    border-left: 2px solid #ccc;
+  }
+  .main .content {
+    margin-left: 40px;
+  }
+  .main.animate .navbar-side {
+    width: 150px;
+    -webkit-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out;
+  }
+  .main.animate .navbar-side .link-text {
+    display: inline-block;
+  }
+  .main.animate .navbar-side .caret {
+    display: block;
+  }
+  .main.animate .content {
+    margin-left: 150px;
+  }
+  .myCaret {
+    display: none;
+  }
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
