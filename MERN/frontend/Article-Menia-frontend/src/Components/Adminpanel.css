@@ -1,126 +1,175 @@
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Adminpanel.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+}
+
+.navbar-side {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-side h6 {
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.navbar-side ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-side ul li {
+  margin-bottom: 10px;
+}
+
+.navbar-side ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.navbar-side ul li a:hover {
+  background-color: #444;
+}
+
+.navbar-side ul li a .icon {
+  margin-right: 10px;
+}
+
+.navbar-side ul li a.link-active {
+  background-color: #555;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.posts-section {
+  padding: 20px;
+}
+
+.posts-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.posts-section ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.posts-section li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px; /* Adjusted card height to be smaller */
+}
+
+.posts-section li:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.posts-section h3 {
+  font-size: 18px;  /* Smaller title font size */
+  margin: 10px 0;
+  color: #333;
+}
+
+.posts-section p {
+  font-size: 14px; /* Smaller content font size */
+  color: #666;
+  margin-bottom: 10px; /* Less space between content and image */
+}
+
+.posts-section img {
+  width: 100%;
+  height: 80px; /* Smaller image height to fit the card */
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.action {
+  margin: 5px;
+  padding: 6px 10px; /* Smaller buttons */
+  font-size: 12px;    /* Smaller button font */
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.action.btn-danger {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+}
+
+.action.btn-danger:hover {
+  background-color: #c9302c;
+}
+
+.action.btn-edit {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+}
+
+.action.btn-edit:hover {
+  background-color: #31b0d5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .posts-section ul {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+}
+
+@media (max-width: 768px) {
+  .posts-section ul {
+    grid-template-columns: 1fr;
   }
-  a:hover {
-    color: #535bf2;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .navbar-side {
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    background-color: #343a40;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out;
-    z-index: 1000;
-  }
-  
-  .navbar-side h6 {
-    color: #fff;
-    margin: 9px 0 10px 20px;
-    font-size: 18px;
-    line-height: 1.6;
-    white-space: nowrap;
-  }
-  
-  .navbar-side ul li {
-    list-style-type: none;
-  }
-  
-  .navbar-side ul li a {
-    padding: 10px;
-    display: inline-block;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 1.1em;
-    width: 100%;
-    padding-left: 20px;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out;
-    white-space: nowrap;
-  }
-  
-  .navbar-side ul li a:hover,
-  .navbar-side ul li a.link-active {
-    background-color: #212121;
-    border-left: 5px solid #ccc;
-  }
-  
-  .navbar-side ul li a .icon {
-    padding-right: 10px;
-  }
-  
-  .content {
-    margin-left: 200px;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out;
-  }
-  
-  .content #navBtn {
-    font-size: 20px;
-  }
-  
-  .main.animate .navbar-side {
-    width: 60px;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out;
-  }
-  
-  .main.animate .navbar-side .link-text {
-    display: none;
-  }
-  
-  .main.animate .navbar-side .myCaret {
-    display: none;
-  }
-  
-  .main.animate .content {
-    margin-left: 60px;
-  }
-  
-  .myBtn[aria-expanded="false"] .myCaret:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "f107";
-    float: right;
-    transition: all 0.5s;
-  }
-  
-  .myBtn[aria-expanded="true"] .myCaret:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "f107";
-    float: right;
-    transition: all 0.5s;
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
+}

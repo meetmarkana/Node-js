@@ -34,15 +34,6 @@ function Adminpannel() {
     fetchPosts()
 }
 
-const Editpost = async (id)=> {
-    const response = await axios.get(`http://localhost:7805/admin/editpost?id=${id}`)
-    .then((res)=>{
-        console.log(res)
-        sessionStorage.setItem('PostData', res.data.editdata._id)
-    })
-    navigate('/editpost')
-}
-
 
 
   return (
@@ -132,10 +123,8 @@ const Editpost = async (id)=> {
                     <h3>{e.title}</h3>
                     <p>{e.content}</p>
                     <img src={`http://localhost:7805/${e.image}`} width={"20%"} />
-                  </li><>        
-                      <button className='action btn btn-danger' onClick={()=>{Deletepost(e._id)}}>Delete</button>
-                      <button className='action btn btn-danger' onClick={()=>{Editpost(e._id)}}>Edit</button>
-                  </>
+                    <button className='action btn btn-danger' onClick={()=>{Deletepost(e._id)}}>Delete</button>
+                  </li>
                   
                   </>
                 ))}
